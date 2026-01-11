@@ -1,0 +1,178 @@
+:root{
+  --blue:#1976d2;
+  --green:#2e7d32;
+  --red:#c62828;
+  --bg:#f5f7fa;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family: "Segoe UI", sans-serif;
+  background:var(--bg);
+  color:#222;
+}
+
+header{
+  background:#111;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+.controls{
+  display:flex;
+  gap:10px;
+  padding:15px;
+  justify-content:center;
+}
+
+.controls select,
+.controls input{
+  padding:8px;
+  font-size:14px;
+}
+
+section{
+  padding:20px;
+}
+
+h2{
+  margin-top:30px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:20px;
+  align-items: start;
+}
+
+.card{
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.inner{
+  position: relative;
+  width: 100%;
+  min-height: 160px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.card.flip .inner{
+  transform: rotateY(180deg);
+}
+
+.face{
+  position: absolute;
+  width: 100%;
+  min-height: 160px;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.6;
+
+  backface-visibility: hidden;
+}
+
+.front{
+  color: white;
+}
+
+.back{
+  background: white;
+  color: #222;
+  transform: rotateY(180deg);
+}
+
+
+.card.flip .front{
+  display:none;
+}
+
+.card.flip .back{
+  display:flex;
+}
+
+
+.blue{background:var(--blue)}
+.green{background:var(--green)}
+.red{background:var(--red)}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+}
+
+.filters .blue { background: #1976d2; }
+.filters .green { background: #2e7d32; }
+.filters .red { background: #c62828; }
+
+.filters button {
+  background: #444;   /* default for All */
+  color: white;
+}
+
+.filters button:hover {
+  background: #000;
+}
+
+.subject-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px;
+}
+
+.subject-card {
+  padding: 30px 50px;
+  font-size: 22px;
+  font-weight: bold;
+  background: #222;
+  color: white;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.subject-card:hover {
+  background: black;
+  transform: scale(1.05);
+}
+/* Fix MathJax overflow */
+mjx-container {
+  max-width: 100% !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+mjx-container svg {
+  max-width: 100% !important;
+}
+.card{
+  font-size: 16px;
+}
+
+.face{
+  font-size: 16px;
+}
+ 

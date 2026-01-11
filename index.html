@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flashcard Learning Hub</title>
+<link rel="stylesheet" href="style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+  async>
+</script>
+
+</head>
+
+<body>
+
+<header>
+  <h1>📚 Flashcard Learning Hub</h1>
+  <p>All Subjects · All Chapters · One Website</p>
+</header>
+
+<div class="subject-boxes">
+  <div class="subject-card" onclick="selectCategory('Mathematics')">
+  📐 Mathematics
+</div>
+
+<div class="subject-card" onclick="selectCategory('Physics')">
+  ⚛️ Physics
+</div>
+</div>
+
+
+<div class="controls">
+  <select id="subjectSelect"></select>
+
+  <input type="text" id="search" placeholder="Search formula...">
+
+  <div class="filters">
+    <button onclick="filterLevel('all')">All</button>
+    <button class="blue" onclick="filterLevel('blue')">Class 10</button>
+    <button class="green" onclick="filterLevel('green')">Class 11</button>
+    <button class="red" onclick="filterLevel('red')">Class 12 / Engg</button>
+  </div>
+</div>
+
+
+<section id="content"></section>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
